@@ -1,3 +1,5 @@
+const STORAGE_KEY = 'feedback-form-state';
+
 const refs = {
 form: document.querySelector('.feedback-form'),
 textarea: document.querySelector('.feedback-form textarea'),
@@ -13,18 +15,18 @@ populateTexarea()
 function onTextareaInput (evt) {
     const massage = evt.currentTarget.value;
 
-    localStorage.setItem('feedback-form-state', massage);
+    localStorage.setItem(STORAGE_KEY, massage);
 }
 
 function onFormSubmit (evt) {
     evt.preventDefault();
     console.log('отправляем форму');
     evt.currentTarget.reset();
-    localStorage.removeItem('feedback-form-state')
+    localStorage.removeItem(STORAGE_KEY)
 }
 
 function populateTexarea(){
-    const savedMAssage = localStorage.getItem('feedback-form-state')
+    const savedMAssage = localStorage.getItem(STORAGE_KEY)
     if (savedMAssage){
         refs.textarea.value = savedMAssage;
     }
