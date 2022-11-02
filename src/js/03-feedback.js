@@ -16,6 +16,7 @@ refs.textarea.addEventListener('input', throttle(onTextareaInput, 500));
 
 refs.form.addEventListener('input', e => {
     formData[e.target.name] = e.target.value;
+    localStorage.setItem(STORAGE_KEY)
     console.log(formData);
 });
 
