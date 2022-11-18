@@ -12,7 +12,6 @@ const galleryContainer = document.querySelector('.gallery');
 const galleryMarkup = createGalleryRef(galleryItems)
 
 galleryContainer.insertAdjacentHTML("afterbegin", galleryMarkup);
-galleryContainer.addEventListener('click', onContainerClick)
 
 
 function createGalleryRef(galleryItems) {
@@ -30,18 +29,8 @@ function createGalleryRef(galleryItems) {
 
 
 
-function onContainerClick (evt) {
-evt.preventDefault();
-
-if(evt.target.nodeName !== "IMG"){
-    return;
-}
-console.log(evt.target);
-initializeLightbox();
-}
-
-function initializeLightbox() {const lightbox = new SimpleLightbox('.gallery a', {
+const lightbox = new SimpleLightbox('.gallery a', {
 	captionDelay: 250,
     captionsData:'alt',
 });
-}
+

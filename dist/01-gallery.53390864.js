@@ -514,7 +514,6 @@ console.log((0, _galleryItems.galleryItems));
 const galleryContainer = document.querySelector(".gallery");
 const galleryMarkup = createGalleryRef((0, _galleryItems.galleryItems));
 galleryContainer.insertAdjacentHTML("afterbegin", galleryMarkup);
-galleryContainer.addEventListener("click", onContainerClick);
 function createGalleryRef(galleryItems) {
     return galleryItems.map(({ preview , original , description  })=>{
         return `<a class="gallery__item" href="${original}">
@@ -525,18 +524,10 @@ function createGalleryRef(galleryItems) {
       </a>`;
     }).join("");
 }
-function onContainerClick(evt) {
-    evt.preventDefault();
-    if (evt.target.nodeName !== "IMG") return;
-    console.log(evt.target);
-    initializeLightbox();
-}
-function initializeLightbox() {
-    const lightbox = new (0, _simplelightboxDefault.default)(".gallery a", {
-        captionDelay: 250,
-        captionsData: "alt"
-    });
-}
+const lightbox = new (0, _simplelightboxDefault.default)(".gallery a", {
+    captionDelay: 250,
+    captionsData: "alt"
+});
 
 },{"./gallery-items":"9C7dK","simplelightbox":"9ydBq","simplelightbox/dist/simple-lightbox.min.css":"kaxSc","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"9C7dK":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
