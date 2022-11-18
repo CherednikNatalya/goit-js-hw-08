@@ -513,9 +513,9 @@ const LOCALSTORAGE_KEY = "videoplayer-current-time";
 const CurrentTime = localStorage.getItem(LOCALSTORAGE_KEY);
 const player = new (0, _playerDefault.default)(videoEl);
 const onPlay = function(data) {
-    const timeupdate = data.seconds;
-    console.log(timeupdate);
-    localStorage.setItem(LOCALSTORAGE_KEY, timeupdate);
+    const timeUpdate = data.seconds;
+    console.log(timeUpdate);
+    localStorage.setItem(LOCALSTORAGE_KEY, timeUpdate);
 };
 player.on("timeupdate", (0, _lodashThrottleDefault.default)(onPlay, 1000));
 player.setCurrentTime(CurrentTime).then(function(seconds) {}).catch(function(error) {

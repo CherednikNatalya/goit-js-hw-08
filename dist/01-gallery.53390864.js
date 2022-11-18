@@ -529,6 +529,9 @@ function onContainerClick(evt) {
     evt.preventDefault();
     if (evt.target.nodeName !== "IMG") return;
     console.log(evt.target);
+    initializeLightbox();
+}
+function initializeLightbox() {
     const lightbox = new (0, _simplelightboxDefault.default)(".gallery a", {
         captionDelay: 250,
         captionsData: "alt"

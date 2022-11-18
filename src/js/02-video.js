@@ -12,9 +12,9 @@ const CurrentTime = localStorage.getItem(LOCALSTORAGE_KEY)
 const player = new Player(videoEl);
 
 const onPlay = function (data) {
-  const timeupdate = data.seconds;
-  console.log(timeupdate);
-  localStorage.setItem(LOCALSTORAGE_KEY, timeupdate)
+  const timeUpdate = data.seconds;
+  console.log(timeUpdate);
+  localStorage.setItem(LOCALSTORAGE_KEY, timeUpdate);
 }
 
 player.on('timeupdate', throttle(onPlay, 1000));
