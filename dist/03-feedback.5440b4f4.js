@@ -506,7 +506,7 @@ function hmrAcceptRun(bundle, id) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _lodashThrottle = require("lodash.throttle");
 var _lodashThrottleDefault = parcelHelpers.interopDefault(_lodashThrottle);
-formRef = document.querySelector(".feedback-form");
+const formRef = document.querySelector(".feedback-form");
 const STORAGE_KEY = "feedback-form-state";
 const formData = {};
 console.log(formRef.elements.email);
